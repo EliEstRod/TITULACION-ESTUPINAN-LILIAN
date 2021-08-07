@@ -1,0 +1,16 @@
+C:\Codigos\VS2010\VALIDACION\ValidacionXMLyXSD\ValidacionXMLyXSD\bin\Debug\ValidacionXMLyXSD.exe
+C:\Codigos\VS2010\VALIDACION\ValidacionXMLyXSD\ValidacionXMLyXSD\bin\Debug\ValidacionXMLyXSD.pdb
+C:\Codigos\VS2010\VALIDACION\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.Properties.Resources.resources
+C:\Codigos\VS2010\VALIDACION\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.csproj.GenerateResource.Cache
+C:\Codigos\VS2010\VALIDACION\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.exe
+C:\Codigos\VS2010\VALIDACION\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.pdb
+C:\Codigos\VS2010\VALIDACION\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.csprojResolveAssemblyReference.cache
+C:\Codigos\VS2010\VALIDACION\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.frmValidacionXml.resources
+C:\Codigos\VS2010\ValidacionXml\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.exe
+C:\Codigos\VS2010\ValidacionXml\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.pdb
+C:\Codigos\VS2010\ValidacionXml\ValidacionXMLyXSD\ValidacionXMLyXSD\bin\Debug\ValidacionXMLyXSD.exe
+C:\Codigos\VS2010\ValidacionXml\ValidacionXMLyXSD\ValidacionXMLyXSD\bin\Debug\ValidacionXMLyXSD.pdb
+C:\Codigos\VS2010\ValidacionXml\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.csprojResolveAssemblyReference.cache
+C:\Codigos\VS2010\ValidacionXml\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.Properties.Resources.resources
+C:\Codigos\VS2010\ValidacionXml\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.frmValidacionXml.resources
+C:\Codigos\VS2010\ValidacionXml\ValidacionXMLyXSD\ValidacionXMLyXSD\obj\x86\Debug\ValidacionXMLyXSD.csproj.GenerateResource.Cache

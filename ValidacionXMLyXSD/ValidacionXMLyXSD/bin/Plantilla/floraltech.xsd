@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- tipo Base -->
+		<xsd:element name="AWBS" type="AWBSType" />
+	<!-- tipos compuestos -->
+    <!-- AWBSType    ELEMENTO BASE/PADRE-->
+    <xsd:complexType name="AWBSType">
+        <xsd:sequence>
+            <xsd:element name="AWB" type="AWBType" /> 
+        </xsd:sequence>
+    </xsd:complexType>
+	
+	<!-- AWBType -->
+	<xsd:complexType name="AWBType" >
+        <xsd:sequence>
+			<xsd:element name="IDEAEROLINEA" type="entero3" /> 
+            <xsd:element name="CODAWB" type="entero11" />
+			<xsd:element name="CODAWBNUEVA" type="espaciosEnBlanco" />
+            <xsd:element name="CODEAWB" type="entero3" />
+			<xsd:element name="CODCNEEAWB" type="stringLetrasNumeros18" /> 
+			<xsd:element name="CNEEAWB" type="stringLetrasNumeros150" /> 
+            <xsd:element name="RUCAGENCIA" type="intRuc13" />
+			<xsd:element name="ORIGEN" type="string3" />
+			<xsd:element name="DESTINO" type="string3" />
+			<xsd:element name="FVUELO"> 
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string" >														
+							<xsd:pattern value="[0-9/]*"/> 
+							<xsd:maxLength value="10"/>
+							<xsd:minLength value="8"/>							
+							</xsd:restriction> 
+					 </xsd:simpleType>
+			</xsd:element> 
+						
+			<xsd:element name="HAWB" type="HAWBType" maxOccurs="unbounded" />	<!--maxima ocurrencia/repeticion=ilimitada   maxOccurs="unbounded" -->		
+        </xsd:sequence>
+    </xsd:complexType>	
+	
+	<!-- HAWBType -->
+	<xsd:complexType name="HAWBType" >
+        <xsd:sequence>
+			<xsd:element name="CODHAWB" type="stringLetrasNumeros20" /> 
+            <xsd:element name="CODFINCA" type="intRuc13" />
+            <xsd:element name="FINCA" type="stringLetrasNumeros150" />
+			<xsd:element name="CODCNEEHAWB" type="stringLetrasNumeros18" /> 
+			<xsd:element name="CNEEHAWB" type="stringLetrasNumeros150" /> 
+            <xsd:element name="PCSCOOR" type="entero1max20" />
+			<xsd:element name="PBXCOOR" type="decimal2" />
+			<xsd:element name="CODPALET" type="espaciosEnBlanco" />
+			<xsd:element name="PALET" type="espaciosEnBlanco" />
+			<xsd:element name="PRECOOLING" type="espaciosEnBlanco" />			
+			<xsd:element name="TEMPPRECOOLING" type="espaciosEnBlanco" />
+			<xsd:element name="DAE" type="entero17" />
+			<xsd:element name="PAISDAE" type="stringLetras30" />
+			<xsd:element name="NAWB" type="NAWBType" minOccurs="0"/> <!-- Puedeaparecer o ser omitido   maxOccurs="0" -->
+        </xsd:sequence>
+    </xsd:complexType>	
+	
+	<!-- NAWBType -->
+	<xsd:complexType name="NAWBType" >
+        <xsd:sequence>
+			<xsd:element name="CODNAWB" type="stringLetrasNumeros20" /> 
+            <xsd:element name="CODFINCA" type="intRuc13" />
+            <xsd:element name="FINCA" type="stringLetrasNumeros150" />
+			<xsd:element name="CODCNEENAWB" type="stringLetrasNumeros18" /> 
+			<xsd:element name="CNEENAWB" type="stringLetrasNumeros150" /> 
+            <xsd:element name="PCSCOOR" type="entero1max20" />
+			<xsd:element name="PBXCOOR" type="decimal2" />
+			<xsd:element name="CODPALET" type="espaciosEnBlanco" />
+			<xsd:element name="PALET" type="espaciosEnBlanco" />
+			<xsd:element name="PRECOOLING" type="espaciosEnBlanco" />			
+			<xsd:element name="TEMPPRECOOLING" type="espaciosEnBlanco" />
+			<xsd:element name="DAE" type="entero17" />
+			<xsd:element name="PAISDAE" type="stringLetras30" />			
+        </xsd:sequence>
+    </xsd:complexType>	
+	
+	
+	<!-- CREACION DE VALIDACIONES  -->
+		<!--  Caracteres tamaños -->
+				
+				<!-- STRINGS -->	
+	<xsd:simpleType name="stringLetrasNumeros150"><!--  bien -->
+        <xsd:restriction base="xsd:string">
+			<!-- letras y espacios-->
+			<xsd:pattern value="[a-zA-Z0-9 -.]*"/> 
+          <xsd:maxLength value="150"/>
+		  <xsd:minLength value="5"/>		 
+        </xsd:restriction>
+    </xsd:simpleType>
+	
+	<xsd:simpleType name="stringLetras30">		<!--  bien -->
+        <xsd:restriction base="xsd:string">
+			<!-- letras y espacios-->
+			<xsd:pattern value="[a-zA-Z ]*"/> 
+          <xsd:maxLength value="30"/>
+		  <xsd:minLength value="4"/>		 
+        </xsd:restriction>
+    </xsd:simpleType>
+	
+	<xsd:simpleType name="stringLetrasNumeros18"><!--  bien -->
+        <xsd:restriction base="xsd:string">
+			<!-- letras y espacios-->
+			<xsd:pattern value="[a-zA-Z0-9 -]*"/> 
+          <xsd:maxLength value="18"/>
+		  <xsd:minLength value="4"/>		 
+        </xsd:restriction>
+    </xsd:simpleType>
+	
+	<xsd:simpleType name="stringLetrasNumeros20"><!--  bien -->
+        <xsd:restriction base="xsd:string">            			
+	<!-- [a-zA-Z0-9][A-Z0-9 ÑÇ´ÁÉÍÓÚ',&:;_\-\.]* -->			
+			<xsd:pattern value="[a-zA-Z0-9 -]*"/> 
+			<xsd:maxLength value="20"/>
+			<xsd:minLength value="10"/>				
+        </xsd:restriction>
+    </xsd:simpleType>
+	
+	<xsd:simpleType name="espaciosEnBlanco">	<!--  bien -->
+        <xsd:restriction base='xsd:string'>
+		<!-- guardar 1/0,campo vacio -->
+			<xsd:pattern value="[ ]*"/>
+			<xsd:maxLength value="1"/>
+		  <xsd:minLength value="0"/>
+		</xsd:restriction>
+    </xsd:simpleType>
+		
+	
+	<xsd:simpleType name="string3"> 			<!--  bien -->
+        <xsd:restriction base="xsd:string">
+			<!--  3 Letras Mayùsc -->
+            <xsd:maxLength value="3" />	
+			<xsd:pattern value="[A-Z]{3}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+		
+			
+				<!--  ENTEROS -->		
+	<xsd:simpleType name="intRuc13"> 			 <!--  bien --> 
+        <xsd:restriction base="xsd:string">
+			<!--  13 nùmeros -->
+			<xsd:maxLength value="13" />
+            <xsd:pattern value="[0-9]{13}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+	
+	<xsd:simpleType name="entero17">			<!--  bien -->
+		<xsd:restriction base="xsd:string">
+			<!--  17 nùmeros -->
+			<xsd:length value="17"/> 
+			 <xsd:pattern value="[0-9]{17}" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="entero1max20">		<!--  bien -->
+		<xsd:restriction base="xsd:string">
+			<!--  1 nùmeros -->
+			<xsd:pattern value="[0-9 ]*" />
+			<xsd:maxLength value="20"/>
+			<xsd:minLength value="1"/>				
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="entero11">				 <!--  bien -->
+		<xsd:restriction base="xsd:string">
+			<!--  8 nùmeros -->	
+			<xsd:pattern value="[0-9 ]*" />
+			<xsd:maxLength value="11"/>
+			<xsd:minLength value="8"/>				 
+		</xsd:restriction>
+	</xsd:simpleType>
+		
+	<xsd:simpleType name="entero3">				<!--  bien -->
+		<xsd:restriction base="xsd:string">
+			<!--  3 nùmeros -->
+			<xsd:length value="3"/>
+			 <xsd:pattern value="[A-Z0-9]{3}" />
+		</xsd:restriction>
+	</xsd:simpleType>	
+	
+	<!--  Decimal -->
+	<xsd:simpleType name="decimal2">			 <!--  bien -->
+		<xsd:restriction base='xsd:decimal'>
+		<!-- entero con maximo 2 decimales -->
+			<xsd:fractionDigits value='4'/>  
+		</xsd:restriction>
+	</xsd:simpleType>			
+		
+</xsd:schema>
